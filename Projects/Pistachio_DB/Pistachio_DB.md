@@ -25,3 +25,4 @@ The database was obtained from [muratkoklu datasets](https://www.muratkoklu.com/
 
 The morphological characteristics of pistachio is shown in the following figure.
 
+<img src="img/Pistachio_features.png" width="700">
