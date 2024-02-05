@@ -1,5 +1,5 @@
 # Pistachio DataBase Exploration
-The purpose of this project is to examine a database of pistachios utilizing techniques of visualization, normalization, and generation of synthetic data.
+The purpose of this project is to examine a database of pistachios using data visualization techniques.
 
 ## Database
 The database was obtained from [muratkoklu datasets](https://www.muratkoklu.com/datasets/). It has 12 morphological and 4 shape features described in the following table:
@@ -52,14 +52,17 @@ data = pd.read_csv(directory, delimiter=",")
 
 > [!TIP]
 > Store the attribute name in one list and the desition attribute in another list
+
 ```python
 nom_col = list(data.columns)
 categories = nom_col[-1]
 nom_col = nom_col[:-1]
 ```
 
-
 ### Examine number of instances and attributes of the database
+
+In a database, instances refer to the rows of the database, while attributes are equivalent to the columns of the database.
+
 ```python
 num_inst = data.shape[0]
 num_atri = data.shape[1]
@@ -72,6 +75,8 @@ Instances: 2148 <br>
 Attributes: 17
 
 ### Determine the type of data by attribute
+
+The data contained in a database can be of different types, including integers, floats, characters, among others.
 
 ```python
 data.dtypes
@@ -97,6 +102,8 @@ dtype: object
 
 ### Check for missing data (empty spaces)
 
+Missing data can occur for different reasons, such as capture error, irregularities in the measuring equipment, among others.
+
 ```python
 data.isnull().sum()
 ```
@@ -121,6 +128,8 @@ dtype: int64
 
 ### Evaluate the class balance
 
+The balance between the classes can be determined by comparing the number of instances per class.
+
 ```python
 class_balance = data['Class'].value_counts()
 
@@ -134,7 +143,7 @@ print('Siit_Pistachio:', num_siit, ', Percentage = {:.2f}'.format(num_siit/num_i
 Kirmizi_Pistachio: 1232 , Percentage = 57.36 % <br>
 Siit_Pistachio: 916 , Percentage = 42.64 %
 
-### Identify any outlier data
+### Identify any outlier data 
 
 This method consists of calculating the first and third quartiles, calculating the inter quantile range (IQR) and the lower and upper limits. <br>
 
@@ -194,6 +203,8 @@ Outliers in  SHAPEFACTOR_3 : 35 <br>
 Outliers in  SHAPEFACTOR_4 : 167
 
 ### Calculate the minimum, maximum, mean, and standard deviation
+
+In continuous data there are characteristics that describe the central tendency of the data such as its mean and standard deviation. In addition, the minimum and maximum values are used to understand the range in which each characteristic of the data is found.
 
 ```python
 data.describe().transpose()
@@ -397,6 +408,13 @@ data.describe().transpose()
 
 ### Determine the distribution type by attribute and class
 
+There are different types of data distribution:
+- Uniform
+- Normal (unimodal)
+- Unimodal left or right skewed
+- Multimodal
+- Exponential
+
 ```python
 for col in nom_col:
     sns.displot(data=data,x=col, kind="kde")
@@ -407,7 +425,97 @@ for col in nom_col:
     plt.title('Distribution ' + col)
     plt.show()
 ```
-An example of the area distribution is shown in the following figures.
+An example of the AREA distribution of all instances and divided per class are shown in the following figures.
 
 <img src="img/Dist Area.png" width="500">
 <img src="img/Dist Area (1).png" width="700">
+
+## Data Visualization
+
+Data visualization is use to represent the information in a simple way.
+
+### Heatmap
+
+This represents the data as a color-coded matrix. For this, the correlations were stored in a DataFrame, using the `.corr` function of pandas.
+
+```python
+correlation = data[nom_col].corr()
+fig, ax = plt.subplots(figsize=(10,10))
+sns.heatmap(correlation, vmax=1.0, center=0, fmt='.2f', square=True, linewidths=1, annot=True, cbar_kws={"shrink": .60})
+plt.show()
+```
+Heatmap of all attributes is shown in the following figure.
+
+<img src="img/1_SNS_Heatmap.png" width="700">
+
+### Boxplot
+
+A box plot shows the distribution of quantitative data in a way that facilitates comparisons between variables.
+
+Boxplot of all attributes is shown in the following figure.
+
+<img src="img/2_SNS_Boxplot.png" width="700">
+
+### Histogram
+
+A histogram is a classic visualization tool that represents the distribution of one or more variables by counting the number of observations.
+
+Histogram of the attribute AREA is shown in the following figure.
+
+<img src="img/3_SNS_Hist.png" width="700">
+
+### Kdplot
+
+Kdeplot is a density estimation plot, which is a method for visualizing the distribution.
+
+Kdeplot graphic of the attribute AREA is shown in the following figure.
+
+<img src="img/4_SNS_Kdeplot.png" width="700">
+
+### Displot
+
+Displot is another method of visualizing the distribution.
+
+Displot graphic of the attribute AREA is shown in the following figure.
+
+<img src="img/5_SNS_Displot.png" width="700">
+
+### Scatter
+
+The scatter plot allows to visualize the relationship between two attributes.
+
+The scatter plot between the attributes AREA and PERIMETER is shown in the following figure.
+
+<img src="img/6_SNS_Scatter.png" width="700">
+
+### Rugplot
+
+This function is intended to complement other graphs by showing the location of individual observations in a discrete manner. 
+
+The Rugplot between the attributes AREA and PERIMETER is shown in the following figure.
+
+<img src="img/7_SNS_Rugplot.png" width="700">
+
+### Catplot
+
+This function provides access to several axis-level functions that show the relationship between a numeric variable and one or more categorical variables.
+
+Catplot graphic of the attribute AREA is shown in the following figure.
+
+<img src="img/8_SNS_Catplot.png" width="700">
+
+### lmplot
+
+It is intended as a practical interface for fitting regression models on conditional subsets of a data set. 
+
+The lmplot between the attributes AREA and PERIMETER is shown in the following figure.
+
+<img src="img/9_SNS_lmplot.png" width="700">
+
+### Regplot
+
+Graphically represent the data and the fit of a linear regression model.
+
+The Regplot between the attributes AREA and PERIMETER is shown in the following figure.
+
+<img src="img/10_SNS_regplot.png" width="700">
