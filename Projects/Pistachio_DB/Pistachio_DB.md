@@ -519,3 +519,8 @@ Graphically represent the data and the fit of a linear regression model.
 The Regplot between the attributes AREA and PERIMETER is shown in the following figure.
 
 <img src="img/10_SNS_regplot.png" width="700">
+
+# References
+
+[1] I. A. Özkan, M. Köklü, and R. Saraçog ̆lu, “Classification of pistachio species using improved k-nn classifier,” Progress in Nutrition, vol. 23, 2 2021. <br>
+[2] M. Aceves, "Inteligencia Artificial para Programadores con Prisa," Universo de letras, 2021.
