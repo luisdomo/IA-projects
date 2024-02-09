@@ -29,7 +29,7 @@ The database consists of images with JPEG extension, which were extracted from t
 
 These images were manually segmented into 2 categories: tennis player and tennis ball, as shown in the next figure.
 
-<img src="img/Database tennis.png" width="700">
+<img src="img/Database tennis.png" width="800">
 
 ## Encoder-Decoder
 An encoder is a part of a neural network that is responsible for processing and compressing the input information. Compression is performed by reducing the dimensionality of the information, i.e. some features of the original information are removed. The goal is to generate a compact representation of the information that can be used for a specific task.
@@ -38,25 +38,25 @@ On the other hand, a decoder is a part of a neural network that is responsible f
 
 Together, the encoder and decoder form a neural network architecture called autoencoder, which is used for information compression and reconstruction tasks. It is common to use this architecture for unsupervised learning tasks, where no training labels are available.
 
-<img src="img/Encoder-decoder.png" width="700">
+<img src="img/Encoder-decoder.png" width="500">
 
 ## FCN_8 model
 FCN-8 is a neural network architecture for image segmentation tasks, developed in 2015. It is an extension of the traditional neural network architecture, Fully Convolutional Network (FCN).
 The main difference between FCN-8 and traditional neural networks is that FCN-8 has an encoder-decoder structure, where the encoder reduces the spatial resolution of the image as the network depth is increased and the decoder increases the resolution again. FCN-8 uses upsampling and skip connections techniques to recover the information lost in the compression process, allowing the network to generate a detailed representation of the image. FCN-8 has been successfully used in various image segmentation tasks, including object segmentation and multi-class segmentation. It is a popular architecture in the computer vision research community.
 
-<img src="img/FCN_8 model.png" width="700">
+<img src="img/FCN_8 model.png" width="500">
 
 ## VGG_16 segnet model
 VGG-16 is a neural network architecture developed for image classification tasks. It was introduced in 2014, it is a deeper version of the VGG architecture. It is a Convolutional Neural Network (CNN) type neural network based on the idea of using several layers of 3x3 filters to extract image features. By using several layers of filters, VGG- 16 can learn increasingly complex features as you go deeper into the network.
 
 Although originally developed for classification tasks, VGG-16 has also been used in image segmentation tasks by adding additional layers to generate segmentation masks.
 
-<img src="img/VGG_16 model.png" width="700">
+<img src="img/VGG_16 model.png" width="500">
 
 ## VGG_Unet Model
 VGG-Unet is a variant of the U-Net architecture, which combines the features of VGG networks with those of U-Net. It is a neural network architecture developed for image segmentation tasks. The VGG-Unet architecture uses the encoder-decoder structure of U-Net, but uses the VGG layers as the encoder instead of using ordinary convolution layers. This allows the network to learn more complex and detailed features from the input image. In addition, VGG-Unet uses "skip" connections between the encoder and decoder layers to allow propagation of detailed information through all layers of the network. VGG-Unet has been shown to perform well in image segmentation tasks, especially in medical and satellite image segmentation tasks.
 
-<img src="img/VGG_Unet.png" width="700">
+<img src="img/VGG_Unet.png" width="500">
 
 ## YOLOv8 Model
 YOLOv8 is a neural network architecture developed for object detection tasks in images. YOLO (You Only Look Once) is an object detection approach that consists of dividing the image into small boxes and using a neural network to classify each box as containing or not containing a specific object.
@@ -85,16 +85,16 @@ The results of the models are summarized in the following table.
 | VGG_16_segnet | 0 | 0.5215 | 0.9945 |
 | VGG_Unet | 0.13085 | 0.60 | 0.9955 |
 
-Example of FNC_8 model
-<img src="img/Results FCN_8.jpg" width="700">
+### Example of FNC_8 model
+<img src="img/Results FCN_8 .jpg" width="600">
 
-Example of VGG_16 model
-<img src="img/Results VGG_16.jpg" width="700">
+### Example of VGG_16 model
+<img src="img/Results VGG_16.jpg" width="600">
 
-Example of VGG_unet model
-<img src="img/Results VGG_unet.jpg" width="700">
+### Example of VGG_unet model
+<img src="img/Results VGG_unet.jpg" width="600">
 
-Example of YOLOv8 model
+### Example of YOLOv8 model
 <img src="img/Results YOLOv8.jpg" width="700">
 
 
