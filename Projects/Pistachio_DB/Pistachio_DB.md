@@ -1,5 +1,5 @@
 # Pistachio DataBase Exploration
-The purpose of this project is to examine a database of pistachios using data visualization techniques.
+In this project we examine a database of pistachios using data visualization techniques.
 
 ## Database
 The database was obtained from [muratkoklu datasets](https://www.muratkoklu.com/datasets/). It has 12 morphological and 4 shape features described in the following table:
