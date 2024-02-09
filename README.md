@@ -2,10 +2,10 @@
 Some projects of artificial intelligence develop during my master degree
 
 ## [Pistachio DataBase Exploration](Projects/Pistachio_DB/Pistachio_DB.md)
-The purpose of this project is to examine a database of pistachios utilizing techniques of visualization, normalization, and generation of synthetic data.
+Examine a database of pistachios using data visualization techniques.
 
 ## [Tenis segmentation](Projects/Tennis_segmentation/Tennis_segmentation.md)
-The objective of this project is the segmentation of images of tennis players.
+Using segmentation to identify tennis players.
 
 ## [Rock, Paper, Scissors Object detection](Projects/RPS_object_detection/RPS_object_detection.md)
-The object of this project is the object detection of the game rock, paper, scissors.
+Object detection of the game rock, paper, scissors.
