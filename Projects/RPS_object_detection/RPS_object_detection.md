@@ -62,12 +62,12 @@ In the present work the validation images were tested, as well as new images and
 ## Results
 The training results are summarized in the next table.
 
-| Class | Instances | Precision | Recall | mAP |
-| :- | :- | :- | :- | :- |
-| All | 2905 | 0.953 | 0.876 | 0.949 |
-| Rock | 1069 | 0.964 | 0.856 | 0.954 |
-| Paper | 1088 | 0.941 | 0.861 | 0.937 |
-| Scissors | 748 | 0.950 | 0.910 | 0.958 |
+| Class | Instances | Precision | Recall | mAP |
+| :- | :- | :- | :- | :- |
+| All | 2905 | 0.953 | 0.876 | 0.949 |
+| Rock | 1069 | 0.964 | 0.856 | 0.954 |
+| Paper | 1088 | 0.941 | 0.861 | 0.937 |
+| Scissors | 748 | 0.950 | 0.910 | 0.958 |
 
 Accuracy, loss and mAP plots of the model are shown in the following figure.
 
